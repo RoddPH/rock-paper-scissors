@@ -34,19 +34,10 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win! Scissors beat paper!")
         humanScore++;
-    } else if (computerChoice === "scissors" && humanChoice === "paper") {
-        console.log("You lost! Scissors beat paper!");
-        computerScore++;
-    } else if (computerChoice === "paper" && humanChoice === "rock") {
-        console.log("You lost! Paper beats rock!");
-        computerScore++;
-    } else if (computerChoice === "rock" && humanChoice === "scissors") {
-        console.log("You lost! Rock beats scissors!");
-        computerScore++;        
     } else {
-        console.log("Invalid input please try again!")
+        console.log(`You lost! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}!`)
+        computerScore++;
     }
-
 }
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
@@ -55,6 +46,10 @@ const humanSelection = getHumanChoice();
 
 playRound(humanSelection, computerSelection);
 console.log(humanScore);
+
+function playGame() {
+    
+}
 
 
 
