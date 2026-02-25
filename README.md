@@ -4,4 +4,4 @@
 
 *Brought to you by* **The Odin Project**
 
-our live website can viewed [here]()
+our live website can viewed [here](https://roddph.github.io/rock-paper-scissors/)
