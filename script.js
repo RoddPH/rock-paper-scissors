@@ -18,7 +18,7 @@ function getHumanChoice() {
     return answer.toLowerCase();
 }
 
-playGame(2);
+playGame(5);
 
 function playGame(round) {
 
