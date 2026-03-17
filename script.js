@@ -13,14 +13,32 @@ function getComputerChoice() {
 }
 
 // Gets the human's choice of attack
-function getHumanChoice() {
-    let answer = prompt("Enter your attack!");
-    return answer.toLowerCase();
+function getHumanChoice(input) {
+   let answer = input.toLowerCase();
+    if (input === "rock" || "paper" || "scissors") {
+        return answer;
+    }
 }
 
-playGame(5);
+const rock = document.getElementById("rock");
 
-function playGame(round) {
+rock.addEventListener("click", e => {
+    playGame(1, "rock");
+});
+
+const paper = document.getElementById("paper");
+
+paper.addEventListener("click", e => {
+    playGame(1, "paper");
+});
+
+const scissors = document.getElementById("scissors");
+
+scissors.addEventListener("click", e => {
+    playGame(1, "scissors");
+});
+
+function playGame(round, input) {
 
     let humanScore = 0, computerScore = 0;
 
@@ -45,7 +63,7 @@ function playGame(round) {
 
     for (let i = 0; i < round; i++) {
         const computerSelection = getComputerChoice();
-        const humanSelection = getHumanChoice();
+        const humanSelection = getHumanChoice(input);
         playRound(humanSelection, computerSelection);
     }
 
