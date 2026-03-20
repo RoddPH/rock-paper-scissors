@@ -1,0 +1,70 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+
+.title {
+    text-align: center;
+    font: normal normal 800 4rem "system-ui", sans-serif;
+    background: gray;
+    padding: 1rem;
+}
+
+.sub1 {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.sub2 {
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#rock { 
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+}
+
+#paper {
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+}
+
+#scissors {
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+}
+
+#player-ui {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    font-size: 50px;
+}
+
+.player-block, .computer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#playerturn, #computerturn {
+    margin: 0;
+}
+
+#player, #computer {
+    margin-top: 5px;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
