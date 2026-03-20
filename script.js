@@ -55,6 +55,15 @@ let computerScore = 0;
 const playerScoreDisplay = document.getElementById("player");
 const computerScoreDisplay = document.getElementById("computer");
 
+const modal_container = document.querySelector(".modal-container");
+const modalTitle = document.getElementById("modalTitle");
+
+const close = document.getElementById("close");
+
+close.addEventListener("click", e => {
+    window.location.reload();
+});
+
 function playGame(round, input) {
 
     function playRound(humanChoice, computerChoice) {
@@ -79,7 +88,13 @@ function playGame(round, input) {
             computerScoreDisplay.textContent = "Computer: " + computerScore;
         }
 
-        
+        if (humanScore === 5) {
+            modal_container.classList.add("show");
+            modalTitle.textContent = "You Win!";
+        } else if (computerScore === 5) {
+            modal_container.classList.add("show");
+            modalTitle.textContent = "You Lose!";
+        }
 
     }
 
