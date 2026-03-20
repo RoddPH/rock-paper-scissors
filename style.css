@@ -59,12 +59,17 @@ body {
     align-items: center;
 }
 
-#playerturn, #computerturn {
+#playerTurn {
+    font-size: 100px;
     margin: 0;
+}
+
+#playerTurn, #computerTurn {
+    margin: 0;
+    line-height: 1;
 }
 
 #player, #computer {
     margin-top: 5px;
     font-size: 50px;
-    margin-bottom: 10px;
 }

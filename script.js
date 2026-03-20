@@ -21,22 +21,36 @@ function getHumanChoice(input) {
 }
 
 const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+
+const playerTurn = document.getElementById("playerTurn");
+const computerTurn = document.getElementById("computerTurn");
+
+const playerScore = document.getElementById("player");
+const computerScore = document.getElementById("computer");
 
 rock.addEventListener("click", e => {
     playGame(1, "rock");
+    playerTurn.textContent = symbols.rock;
 });
-
-const paper = document.getElementById("paper");
 
 paper.addEventListener("click", e => {
     playGame(1, "paper");
+    playerTurn.textContent = symbols.paper;
 });
-
-const scissors = document.getElementById("scissors");
 
 scissors.addEventListener("click", e => {
     playGame(1, "scissors");
+    playerTurn.textContent = symbols.scissors;
 });
+
+const symbols = {
+    rock: "🪨",
+    paper: "📄",
+    scissors: "✂️"
+};
 
 function playGame(round, input) {
 
@@ -64,6 +78,8 @@ function playGame(round, input) {
     for (let i = 0; i < round; i++) {
         const computerSelection = getComputerChoice();
         const humanSelection = getHumanChoice(input);
+        computerTurn.textContent = symbols[computerSelection];
+
         playRound(humanSelection, computerSelection);
     }
 
