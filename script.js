@@ -28,9 +28,6 @@ const scissors = document.getElementById("scissors");
 const playerTurn = document.getElementById("playerTurn");
 const computerTurn = document.getElementById("computerTurn");
 
-const playerScore = document.getElementById("player");
-const computerScore = document.getElementById("computer");
-
 rock.addEventListener("click", e => {
     playGame(1, "rock");
     playerTurn.textContent = symbols.rock;
@@ -52,9 +49,13 @@ const symbols = {
     scissors: "✂️"
 };
 
-function playGame(round, input) {
+let humanScore = 0;
+let computerScore = 0;
 
-    let humanScore = 0, computerScore = 0;
+const playerScoreDisplay = document.getElementById("player");
+const computerScoreDisplay = document.getElementById("computer");
+
+function playGame(round, input) {
 
     function playRound(humanChoice, computerChoice) {
 
@@ -63,16 +64,23 @@ function playGame(round, input) {
         } else if (humanChoice === "paper" && computerChoice === "rock") {
             console.log("You win! Paper beats rock!")
             humanScore++;
+            playerScoreDisplay.textContent = "Player: " + humanScore;
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
             console.log("You win! Rock beats scissors");
             humanScore++;
+            playerScoreDisplay.textContent = "Player: " + humanScore;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
             console.log("You win! Scissors beat paper!")
             humanScore++;
+            playerScoreDisplay.textContent = "Player: " + humanScore;
         } else {
             console.log(`You lost! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}!`)
             computerScore++;
+            computerScoreDisplay.textContent = "Computer: " + computerScore;
         }
+
+        
+
     }
 
     for (let i = 0; i < round; i++) {
